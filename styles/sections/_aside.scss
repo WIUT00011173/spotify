@@ -35,6 +35,7 @@ aside {
             @include font;
             color: #999999;
             font-weight: 700;
+            cursor: pointer;
         }
     }
     .anotherLIb {
@@ -46,6 +47,7 @@ aside {
         > p{
             @include font;
             color: #999999;
+            cursor: pointer;
         }
     }
     .queue {

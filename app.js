@@ -1,3 +1,4 @@
+// aside part
 const aside = document.querySelector("aside")
 const library = document.createElement("div")
 library.classList.add("library")
@@ -50,4 +51,26 @@ for(let txt of text2) {
     const p = document.createElement("p")
     p.innerText = txt
     contain2.appendChild(p)
+}
+// aside part ends (above)
+
+// main-center part (below)
+
+const main = document.querySelector("main")
+const gMorning = document.createElement("div")
+main.appendChild(gMorning)
+gMorning.classList.add("gMorning")
+const morningTxt = document.createElement("p")
+morningTxt.innerText = "Good morning"
+gMorning.appendChild(morningTxt)
+const gMorningImages = document.createElement("div")
+gMorningImages.classList.add("gMorningImges")
+gMorning.appendChild(gMorningImages)
+const gMorningImges = ["./assets/imges/gmorning.png", "./assets/imges/gmorning1.png", "./assets/imges/gmorning2.png"]
+
+for(let img of gMorningImges) {
+    const image = document.createElement("img")
+    image.src = img
+    gMorningImages.appendChild(image)
+
 }

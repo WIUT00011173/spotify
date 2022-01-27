@@ -1,0 +1,46 @@
+main {
+    @import "./variables";
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    header {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+
+        a {
+            @include font;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: #999;
+        }
+        > a:first-child {
+            color: chartreuse;
+        }
+    }
+    .gMorning {
+        > p {
+            @include font(20px);
+            color: white;
+        }
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+
+        .gMorningImges {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+}
