@@ -1,0 +1,134 @@
+aside {
+  padding: 30px;
+  padding-top: 0;
+  width: 300px;
+}
+
+aside .header {
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 15px;
+  border-bottom: .1px solid #b4a3a3;
+}
+
+aside .header span {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-size: 20px;
+  color: #F2F2F2;
+}
+
+aside .header > img:last-child {
+  cursor: pointer;
+  height: 10px;
+  -webkit-transform: rotateZ(-90deg);
+          transform: rotateZ(-90deg);
+}
+
+aside .library {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+  padding: 30px 0;
+  border-bottom: 1px solid #b4a3a3;
+}
+
+aside .library > p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  color: #999999;
+  font-weight: 700;
+}
+
+aside .anotherLIb {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+  padding: 30px 0;
+}
+
+aside .anotherLIb > p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  color: #999999;
+}
+
+aside .queue {
+  background-color: #0D0D0D;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+  -webkit-transform: translateX(-30px);
+          transform: translateX(-30px);
+  padding: 30px;
+  border-radius: 0 7px 0 7px;
+}
+
+aside .queue > p {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 20px;
+  color: #1ED760;
+}
+
+aside .queue div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+}
+
+aside .queue div p:first-child {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  color: #999999;
+}
+
+aside .queue div p:last-child {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  color: #999999;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #020A05;
+}
+/*# sourceMappingURL=main.css.map */
