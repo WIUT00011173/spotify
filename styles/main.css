@@ -131,6 +131,13 @@ main {
   gap: 20px;
 }
 
+main > p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  color: white;
+  font-weight: 700;
+}
+
 main header {
   width: 100%;
   display: -webkit-box;
@@ -182,6 +189,7 @@ main .gMorning > p {
   font-family: 'Montserrat', sans-serif;
   font-size: 20px;
   color: white;
+  font-weight: 700;
 }
 
 main .gMorning .gMorningImges {
@@ -195,6 +203,91 @@ main .gMorning .gMorningImges {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+main .recentPlayed {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+main .recentPlayed .boxList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+}
+
+main .recentPlayed .boxList > p:nth-child(2) {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+}
+
+main .recentPlayed .boxList > p:nth-child(3) {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  color: #999;
+}
+
+main .forYou {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+main .forYou .boxList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+}
+
+main .forYou .boxList > p:nth-child(2) {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+}
+
+main .forYou .boxList > p:nth-child(3) {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  color: #999;
+}
+
+.sidebar {
+  width: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 20px;
 }
 
 * {

@@ -74,3 +74,108 @@ for(let img of gMorningImges) {
     gMorningImages.appendChild(image)
 
 }
+
+const recentTxt = document.createElement("p")
+recentTxt.innerText = "Recently Played"
+main.appendChild(recentTxt)
+
+const recentPlayed = document.createElement("div")
+recentPlayed.classList.add("recentPlayed")
+main.appendChild(recentPlayed)
+
+const playLists = [
+    {
+        img: "./assets/imges/Rectangle 4.png",
+        boldTxt: "Where Are You Now",
+        txt: "Lost Frequencies, Calum Scot"
+    },
+    {
+        img: "./assets/imges/Rectangle 5.png",
+        boldTxt: "Where Are You Now",
+        txt: "Lost Frequencies, Calum Scot"
+    },
+    {
+        img: "./assets/imges/Rectangle 6.png",
+        boldTxt: "Where Are You Now",
+        txt: "Lost Frequencies, Calum Scot"
+    },
+    {
+        img: "./assets/imges/Rectangle 7.png",
+        boldTxt: "Where Are You Now",
+        txt: "Lost Frequencies, Calum Scot"
+    }
+]
+
+for (let list of playLists) {
+    const boxList = document.createElement("div")
+    boxList.classList.add("boxList")
+    recentPlayed.appendChild(boxList)
+    const img = document.createElement("img")
+    img.src = list.img
+    const boldTxt = document.createElement("p")
+    boldTxt.innerText = list.boldTxt 
+    const txt = document.createElement("p")
+    txt.innerText = list.txt
+    boxList.append(img,boldTxt, txt)
+}
+
+
+
+
+const forYouTxt = document.createElement("p")
+forYouTxt.innerText = "Made For You"
+main.appendChild(forYouTxt)
+
+const forYou = document.createElement("div")
+forYou.classList.add("forYou")
+main.appendChild(forYou)
+
+const forYouLists = [
+    {
+        img: "./assets/imges/Rectangle 8.png",
+        boldTxt: "Where Are You Now",
+        txt: "Lost Frequencies, Calum Scot"
+    },
+    {
+        img: "./assets/imges/Rectangle 9.png",
+        boldTxt: "Where Are You Now",
+        txt: "Lost Frequencies, Calum Scot"
+    },
+    {
+        img: "./assets/imges/Rectangle 8 (1).png",
+        boldTxt: "Where Are You Now",
+        txt: "Lost Frequencies, Calum Scot"
+    },
+    {
+        img: "./assets/imges/Rectangle 11.png",
+        boldTxt: "Where Are You Now",
+        txt: "Lost Frequencies, Calum Scot"
+    }
+]
+
+for (let list of forYouLists) {
+    const boxList = document.createElement("div")
+    boxList.classList.add("boxList")
+    forYou.appendChild(boxList)
+    const img = document.createElement("img")
+    img.src = list.img
+    const boldTxt = document.createElement("p")
+    boldTxt.innerText = list.boldTxt 
+    const txt = document.createElement("p")
+    txt.innerText = list.txt
+    boxList.append(img,boldTxt, txt)
+}
+
+// main-center part ends(above)
+
+// sidebar-section
+
+const sidebar = document.querySelector(".sidebar")
+
+const sidebarImages = ["./assets/imges/Ellipse .png", "./assets/imges/Ellipse 1.png", "./assets/imges/Ellipse 2.png", "./assets/imges/Ellipse 3.png", "./assets/imges/Ellipse 4.png", "./assets/imges/Ellipse 5.png", "./assets/imges/Ellipse 6.png", "./assets/imges/Ellipse 7.png", "./assets/imges/Ellipse 8.png"]
+
+for(let image of sidebarImages) {
+    const img = document.createElement("img")
+    img.src = image
+    sidebar.appendChild(img)
+}
