@@ -2,10 +2,21 @@ aside {
   padding: 30px;
   padding-top: 0;
   width: 300px;
+  -webkit-transition: .5s;
+  transition: .5s;
+  overflow-y: scroll;
 }
 
 aside .header {
-  height: 100px;
+  height: 80px;
+  border-bottom: .1px solid #b4a3a3;
+  -webkit-transition: .5s;
+  transition: .5s;
+  overflow: hidden;
+}
+
+aside .header .user {
+  padding: 20px 0 25px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -13,7 +24,10 @@ aside .header {
       -ms-flex-align: center;
           align-items: center;
   gap: 15px;
-  border-bottom: .1px solid #b4a3a3;
+}
+
+aside .header .user .close-icon {
+  width: 30px;
 }
 
 aside .header span {
@@ -28,6 +42,34 @@ aside .header > img:last-child {
   height: 10px;
   -webkit-transform: rotateZ(-90deg);
           transform: rotateZ(-90deg);
+}
+
+aside .header p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  display: block;
+  color: white;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+aside .header .up-down-icon {
+  cursor: pointer;
+  height: 10px;
+  -webkit-transform: rotateZ(-90deg);
+          transform: rotateZ(-90deg);
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+aside .header .rotate {
+  -webkit-transform: rotateZ(0deg);
+          transform: rotateZ(0deg);
+}
+
+aside .show {
+  overflow: visible;
+  height: 180px;
 }
 
 aside .library {
@@ -118,6 +160,41 @@ aside .queue div p:last-child {
   color: #999999;
 }
 
+@media (max-width: 640px) {
+  aside {
+    -webkit-transition: .5s;
+    transition: .5s;
+    position: absolute;
+    -webkit-transform: translateX(-300px);
+            transform: translateX(-300px);
+    display: none;
+    overflow-y: scroll;
+  }
+  .show-aside {
+    -webkit-transition: .5s;
+    transition: .5s;
+    overflow-y: scroll;
+    background-color: #020A05;
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .show-aside .close-icon {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 50px;
+    background-color: whitesmoke;
+    border-radius: 50%;
+  }
+}
+
 main {
   padding: 20px;
   width: 100%;
@@ -128,7 +205,8 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 20px;
+  gap: 40px;
+  overflow-y: scroll;
 }
 
 main > p {
@@ -152,6 +230,10 @@ main header {
   gap: 30px;
 }
 
+main header .menu-icon {
+  display: none;
+}
+
 main header a {
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
@@ -164,10 +246,45 @@ main header a {
           align-items: center;
   gap: 5px;
   color: #999;
+  width: 20px;
+  height: 50px;
+  overflow: hidden;
+  -webkit-transition: .5s;
+  transition: .5s;
 }
 
 main header > a:first-child {
   color: chartreuse;
+}
+
+main header .search-input {
+  width: 0;
+  -webkit-transition: .5s;
+  transition: .5s;
+  overflow: hidden;
+}
+
+main header .search-input input {
+  padding: 5px;
+  border-radius: 7px;
+  border: none;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+main header .search-input input:focus {
+  border: none;
+}
+
+main header .search-inp-show {
+  padding: 5px;
+  width: 200px;
+}
+
+main header .search-txt {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  color: white;
 }
 
 main .gMorning {
@@ -197,9 +314,12 @@ main .gMorning .gMorningImges {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  gap: 30px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -212,6 +332,8 @@ main .recentPlayed {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 main .recentPlayed .boxList {
@@ -242,6 +364,8 @@ main .forYou {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -269,6 +393,198 @@ main .forYou .boxList > p:nth-child(3) {
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   color: #999;
+}
+
+@media (max-width: 640px) {
+  main {
+    padding: 20px;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 40px;
+  }
+  main > p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    color: white;
+    font-weight: 700;
+  }
+  main header {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    gap: 30px;
+  }
+  main header .menu-icon {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 30px;
+    color: white;
+    background-color: #999;
+    border-radius: 10px;
+  }
+  main header a {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    text-decoration: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 5px;
+    color: #999;
+    width: 20px;
+    height: 50px;
+    overflow: hidden;
+    -webkit-transition: .5s;
+    transition: .5s;
+  }
+  main header > a:first-child {
+    color: chartreuse;
+  }
+  main header .search-input {
+    width: 0;
+    -webkit-transition: .5s;
+    transition: .5s;
+    overflow: hidden;
+  }
+  main header .search-input input {
+    padding: 5px;
+    border-radius: 7px;
+    border: none;
+    -webkit-transition: .5s;
+    transition: .5s;
+  }
+  main header .search-input input:focus {
+    border: none;
+  }
+  main header .search-inp-show {
+    padding: 5px;
+    width: 200px;
+  }
+  main header .search-txt {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: white;
+  }
+  main .gMorning {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 20px;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  main .gMorning > p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    color: white;
+    font-weight: 700;
+  }
+  main .gMorning .gMorningImges {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    gap: 30px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  main .recentPlayed, main .forYou {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 30px;
+  }
+  main .recentPlayed .boxList, main .forYou .boxList {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 10px;
+  }
+  main .recentPlayed .boxList > p:nth-child(2), main .forYou .boxList > p:nth-child(2) {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+  }
+  main .recentPlayed .boxList > p:nth-child(3), main .forYou .boxList > p:nth-child(3) {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: #999;
+  }
+  main .forYou {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  main .forYou .boxList {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 10px;
+  }
+  main .forYou .boxList > p:nth-child(2) {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+  }
+  main .forYou .boxList > p:nth-child(3) {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: #999;
+  }
 }
 
 .sidebar {
@@ -304,5 +620,38 @@ body {
   display: -ms-flexbox;
   display: flex;
   background-color: #020A05;
+  overflow: hidden;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+body main::-webkit-scrollbar {
+  width: 5px;
+}
+
+body main::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+          box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body main::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+  border-radius: 10px;
+}
+
+body aside::-webkit-scrollbar {
+  width: 5px;
+}
+
+body aside::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+          box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body aside::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+  border-radius: 10px;
 }
 /*# sourceMappingURL=main.css.map */

@@ -4,7 +4,8 @@ main {
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 40px;
+    overflow-y: scroll;
 
     > p {
         @include font(20px);
@@ -19,6 +20,10 @@ main {
         justify-content: center;
         gap: 30px;
 
+        .menu-icon {
+            display: none
+        }
+
         a {
             @include font;
             text-decoration: none;
@@ -26,9 +31,38 @@ main {
             align-items: center;
             gap: 5px;
             color: #999;
+            width: 20px;
+            height: 50px;
+            overflow: hidden;
+            transition: .5s;
+
+        
         }
         > a:first-child {
             color: chartreuse;
+        }
+        .search-input {
+            width: 0;
+            
+            transition: .5s;
+            overflow: hidden;
+            input {
+                padding: 5px;
+                border-radius: 7px;
+                border: none;
+                transition: .5s;
+                &:focus {
+                    border: none;
+                }
+            }
+        }
+        .search-inp-show {
+            padding: 5px;
+            width: 200px
+        }
+        .search-txt {
+            @include font;
+            color: white;
         }
     }
     .gMorning {
@@ -46,13 +80,16 @@ main {
         .gMorningImges {
             width: 100%;
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
+            gap: 30px;
             align-items: center;
         }
     }
     .recentPlayed {
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
 
         .boxList {
             display: flex;
@@ -72,6 +109,7 @@ main {
     }
     .forYou {
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
 
         .boxList {
@@ -87,6 +125,145 @@ main {
             > p:nth-child(3){
                 @include font;
                 color: #999;
+            }
+        }
+    }
+}
+
+@media(max-width: 640px) {
+    main {
+        @import "./variables";
+        padding: 20px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    
+        > p {
+            @include font(20px);
+            color: white;
+            font-weight: 700;
+        }
+    
+        header {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+
+            .menu-icon {
+                display: flex;
+                width: 30px;
+                color: white;
+                background-color: #999;
+                border-radius: 10px
+            }
+    
+            a {
+                @include font;
+                text-decoration: none;
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                color: #999;
+                width: 20px;
+                height: 50px;
+                overflow: hidden;
+                transition: .5s;
+    
+            
+            }
+            > a:first-child {
+                color: chartreuse;
+            }
+            .search-input {
+                width: 0;
+                
+                transition: .5s;
+                overflow: hidden;
+                input {
+                    padding: 5px;
+                    border-radius: 7px;
+                    border: none;
+                    transition: .5s;
+                    &:focus {
+                        border: none;
+                    }
+                }
+            }
+            .search-inp-show {
+                padding: 5px;
+                width: 200px
+            }
+            .search-txt {
+                @include font;
+                color: white;
+            }
+        }
+        .gMorning {
+            > p {
+                @include font(20px);
+                color: white;
+                font-weight: 700;
+            }
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: flex-start;
+    
+            .gMorningImges {
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 30px;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+        .recentPlayed, .forYou{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+    
+            .boxList {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+    
+                > p:nth-child(2){
+                    @include font;
+                    font-weight: 700;
+                    color: white;
+                }
+                > p:nth-child(3){
+                    @include font;
+                    color: #999;
+                }
+            }
+        }
+        .forYou {
+            display: flex;
+            justify-content: space-between;
+    
+            .boxList {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+    
+                > p:nth-child(2){
+                    @include font;
+                    font-weight: 700;
+                    color: white;
+                }
+                > p:nth-child(3){
+                    @include font;
+                    color: #999;
+                }
             }
         }
     }

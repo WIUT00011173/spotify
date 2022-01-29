@@ -52,6 +52,24 @@ for(let txt of text2) {
     p.innerText = txt
     contain2.appendChild(p)
 }
+
+const upDownIcon = document.querySelector(".up-down-icon")
+upDownIcon.addEventListener("click", ()=> {
+    document.querySelector(".header").classList.toggle("show")
+    upDownIcon.classList.toggle("rotate")
+})
+
+
+
+// responsive aside
+
+document.querySelector(".menu-icon").addEventListener("click", ()=> {
+    aside.classList.toggle("show-aside")
+})
+document.querySelector(".close-icon").addEventListener("click", ()=> {
+    aside.classList.toggle("show-aside")
+})
+
 // aside part ends (above)
 
 // main-center part (below)
@@ -67,6 +85,19 @@ const gMorningImages = document.createElement("div")
 gMorningImages.classList.add("gMorningImges")
 gMorning.appendChild(gMorningImages)
 const gMorningImges = ["./assets/imges/gmorning.png", "./assets/imges/gmorning1.png", "./assets/imges/gmorning2.png"]
+
+const searchIcon = document.querySelector(".search-icon")
+
+searchIcon.addEventListener("click", ()=> {
+    document.querySelector(".search-input").classList.toggle("search-inp-show")
+})
+window.addEventListener('click', function(e){   
+    if (document.querySelector('.search-icon').contains(e.target)|| document.querySelector('.search-input').contains(e.target)){
+      
+    } else{
+        document.querySelector(".search-input").classList.remove("search-inp-show")
+    }
+});
 
 for(let img of gMorningImges) {
     const image = document.createElement("img")
@@ -165,6 +196,8 @@ for (let list of forYouLists) {
     txt.innerText = list.txt
     boxList.append(img,boldTxt, txt)
 }
+
+
 
 // main-center part ends(above)
 

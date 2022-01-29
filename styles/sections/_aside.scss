@@ -3,25 +3,60 @@ aside {
     padding: 30px;
     padding-top: 0;
     width: 300px;
+    transition: .5s;
+    overflow-y: scroll;
 
     .header {
-        height: 100px;
-        display: flex;
-        align-items: center;
-        gap: 15px;
+        height: 80px;
+        
         border-bottom: .1px solid #b4a3a3;
+        transition: .5s;
+        overflow: hidden;
 
+        .user {
+            padding: 20px 0 25px 0;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            .close-icon {
+                width: 30px;
+            }
+        }
+
+        
         span {
             @include font;
             font-size: 20px;
             color: #F2F2F2;
         }
 
+        
+        
         > img:last-child{
             cursor: pointer;
             height: 10px;
             transform: rotateZ(-90deg);
         }
+        p {
+            @include font;
+            display: block;
+            color: white;
+            transition: .5s;
+        }
+        .up-down-icon {
+            cursor: pointer;
+            height: 10px;
+            transform: rotateZ(-90deg);
+            transition: .5s;
+        }
+        .rotate {
+            transform: rotateZ(0deg);
+        }
+    }
+    .show {
+        overflow: visible;
+        height: 180px;
     }
 
     .library {
@@ -83,4 +118,30 @@ aside {
     }
 
 
+}
+
+@media(max-width: 640px) {
+    aside {
+        transition: .5s;
+        position: absolute;
+        transform: translateX(-300px);
+        display: none;
+        overflow-y: scroll;
+    }
+    .show-aside {
+        transition: .5s;
+        overflow-y: scroll;
+        background-color: #020A05;
+        transform: translateX(0px);
+        display: flex;
+        flex-direction: column;
+
+        .close-icon {
+            display: flex;
+            width: 50px;
+            background-color: whitesmoke;
+            border-radius: 50%;
+        }
+        
+    }
 }
